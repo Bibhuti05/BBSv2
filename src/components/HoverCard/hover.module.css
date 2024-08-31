@@ -1,12 +1,17 @@
 .card {
     position: relative;
-    height: 13rem; /* 52px * 0.25rem = 13rem */
-    width: 13rem; /* 52px * 0.25rem = 13rem */
-    border-radius: 2.75rem; /* 11px * 0.25rem = 2.75rem */
-    background-color: #ffffff;
+    height: 500px; /* 52px * 0.25rem = 13rem */
+    width: 700px; /* 52px * 0.25rem = 13rem */
+    border-radius: 1.2rem; /* 11px * 0.25rem = 2.75rem */
     transition: all 400ms cubic-bezier(0.03, 0.98, 0.52, 0.99) 0s;
     will-change: transform;
-    margin: auto;
+    border: 1px solid rgba(68, 68, 68, 0.7);
+    overflow: hidden;
+    transition: all 500ms ease;
+    z-index: 11;
+    }
+  .card:hover{
+    box-shadow: inset 0px 0px 0px 10px rgb(36, 51, 54);
   }
   
   .card:hover {
@@ -17,10 +22,8 @@
   .pulse {
     position: absolute;
     inset: -0.5rem; /* -2px * 0.25rem = -0.5rem */
-    border-radius: 1.5rem; /* 6px * 0.25rem = 1.5rem */
-    background: linear-gradient(to right, #4b56d2, #7b61ff, #4b56d2);
-    opacity: 0.75;
-    filter: blur(1.5rem); /* 6px * 0.25rem = 1.5rem */
+    /* 6px * 0.25rem = 1.5rem */
+/* 6px * 0.25rem = 1.5rem */
   }
   
   .content {
@@ -31,9 +34,19 @@
     user-select: none;
     align-items: center;
     justify-content: center;
-    border-radius: 1.5rem; /* 6px * 0.25rem = 1.5rem */
-    background-color: #0f172a;
+     /* 6px * 0.25rem = 1.5rem */
+
     font-size: 0.875rem; /* 14px */
     font-weight: 300;
     color: #cbd5e1;
+    background-color: rgba(0, 0, 0, 0.7);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    
+  }
+
+  @media only screen and (max-width: 720px){
+    .card{
+      width: 100vw;
+    }
   }

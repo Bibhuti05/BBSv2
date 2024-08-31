@@ -13,8 +13,9 @@ function throttle(func, delay) {
   };
 }
 
-const TiltEffect = () => {
+const TiltEffect = ({children}) => {
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
+
 
   const onMouseMove = useCallback(
     throttle((e) => {
@@ -24,9 +25,13 @@ const TiltEffect = () => {
       const y = e.clientY - box.top;
       const centerX = box.width / 2;
       const centerY = box.height / 2;
-      const rotateX = (y - centerY) / 7;
-      const rotateY = (centerX - x) / 7;
+      const rotateX = (y - centerY) / 100;
+      const rotateY = (centerX - x) / 100;
 
+        // const gradient = document.getElementById("gradient");
+        // const p = e.clientX;
+        // const d = e.clientY;
+        // gradient.style.backgroundImage = `radial-gradient(circle at ${x}px ${y}px, rgba(0,225,0,.12) 0%, transparent 90%)`;
       setRotate({ x: rotateX, y: rotateY });
     }, 100),
     []
@@ -48,8 +53,8 @@ const TiltEffect = () => {
       }}
     >
       <div className={styles.pulse} />
-      <div className={styles.content}>
-        hover me
+      <div className={styles.content} id={'gradient'}>
+        {children}
       </div>
     </div>
     </>

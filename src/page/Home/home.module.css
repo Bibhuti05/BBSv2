@@ -1,3 +1,51 @@
 .container{
    position: relative;
 }
+
+.skillSection{
+   display: grid;
+   width: 100vw;
+   padding: 30px;
+   justify-content: center;
+   margin-top: 100px;
+   position: relative;
+  
+
+ }
+ .radialColor{
+   position: absolute;
+   top: 30px;
+   left: 100px;
+   width: 500px; /* Set your desired width */
+   height: 500px; /* Set your desired height */
+   background: radial-gradient(closest-side, rgb(0, 110, 255) 90%, rgb(5, 5, 5) 100%);
+   filter: blur(200px);
+   z-index: 10;
+   animation: revolve 10s linear reverse infinite; /* Adjust duration as needed */
+
+ }
+ .radialColor2{
+   position: absolute;
+   top: 350px; 
+   right: 200px;
+   width: 500px; /* Set your desired width */
+   height: 500px; /* Set your desired height */
+   background: radial-gradient(closest-side, rgb(0, 195, 255) 90%, rgb(5, 5, 5) 100%);
+   filter: blur(200px);
+   z-index: 10;
+   animation: revolve 10s linear infinite; /* Adjust duration as needed */
+
+ }
+
+ @media only screen and (max-width: 720px){
+
+ }
+
+ @keyframes revolve {
+   0% {
+     transform: rotate(0deg) translateX(300px) rotate(0deg);
+   }
+   100% {
+     transform: rotate(360deg) translateX(300px) rotate(-360deg);
+   }
+ }
